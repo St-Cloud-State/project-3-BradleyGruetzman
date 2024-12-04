@@ -62,6 +62,15 @@ public class Model {
   public Enumeration getSelectedItems() {
     return selectedList.elements();
   }
+
+  public void translateSelectedItems(int dx, int dy){
+    Enumeration<Item> enumeration = selectedList.elements();
+    while (enumeration.hasMoreElements()){
+      Item item = enumeration.nextElement();
+      item.translate(dx, dy);
+    }
+    setChanged();
+  }
   // other fields, methods and classes
   public void save(String fileName) {
     try {

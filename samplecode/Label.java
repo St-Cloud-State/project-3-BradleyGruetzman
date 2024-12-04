@@ -25,4 +25,9 @@ public class Label extends Item {
   public Point getStartingPoint() {
     return startingPoint;
   }
+
+  @Override
+  public void translate(int dx, int dy) {
+    if (startingPoint != null) startingPoint.translate(dx, dy);
+}
 }
